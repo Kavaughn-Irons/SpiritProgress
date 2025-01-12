@@ -278,7 +278,7 @@
                         updateTotalChart(filteredData);
 
                         const totalMysticWons = filteredData.reduce((sum, item) => sum + item.mysticWons, 0);
-                        document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: ${totalMysticWons.toLocaleString('en-US')} (Deep Knowledge)`;
+                        document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: $${totalMysticWons.toLocaleString('en-US')} (Deep Knowledge)`;
 
                         if (filteredData.length > 0) {
                             initialMysticWons = filteredData[0].mysticWons;
