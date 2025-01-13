@@ -223,7 +223,7 @@
                     push(dbRef, { mysticWons, topics, timestamp });
                     totalMysticWons += mysticWons;
                     document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: ${totalMysticWons}`;
-                    document.getElementById('totalMysticWonsUSD').innerText = `Total Mystic Wons: ${totalMysticWons * 1000}`;
+                    document.getElementById('totalMysticWonsUSD').innerText = `Total Mystic Wons: ${(totalMysticWons * 1000)}`;
                     fetchData('day');
                 });
 
