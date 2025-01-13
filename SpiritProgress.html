@@ -222,8 +222,9 @@
                     const timestamp = new Date().toISOString();
                     push(dbRef, { mysticWons, topics, timestamp });
                     totalMysticWons += mysticWons;
+                    const USD = totalMysticWons * 1000
                     document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: ${totalMysticWons}`;
-                    document.getElementById('totalMysticWonsUSD').innerText = `Total Mystic Wons: ${(totalMysticWons * 1000)}`;
+                    document.getElementById('totalMysticWonsUSD').innerText = `Total Mystic Wons: ${USD}`;
                     fetchData('day');
                 });
 
