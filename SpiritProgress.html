@@ -211,6 +211,16 @@
                         }
                     }
                 });
+                
+                document.getElementById('updateGraph').addEventListener('click', () => {
+                    const mysticWons = parseFloat(document.getElementById('mysticWons').value) || 0;
+                    const topics = document.getElementById('topics').value || 'Unknown';
+                    const timestamp = new Date().toISOString();
+                    push(dbRef, { mysticWons, topics, timestamp });
+                    totalMysticWons += mysticWons;
+                    document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: ${totalMysticWons}`;
+                    fetchData('day');
+                });
 
                 const totalCtx = document.getElementById('totalChart').getContext('2d');
                 const totalMysticWonsChart = new Chart(totalCtx, {
