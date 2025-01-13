@@ -160,7 +160,11 @@
             <input type="text" id="topics" placeholder="Topics">
             <button class="update-button" id="updateGraph">Update Progress</button>
         </div>
-        <div class="stats" id="totalMysticWons">Total Mystic Wons: 0</div> <!-- Added total mystic wons -->
+        <div class="stats" id="totalMysticWons">Total Mystic Wons: 0</div>
+        <br>
+        <br>
+        <div class="stats" id="totalMysticWonsUSD">Total Mystic Wons (United States Dollars): 0</div>
+             <!-- Added total mystic wons -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -219,6 +223,7 @@
                     push(dbRef, { mysticWons, topics, timestamp });
                     totalMysticWons += mysticWons;
                     document.getElementById('totalMysticWons').innerText = `Total Mystic Wons: ${totalMysticWons}`;
+                    document.getElementById('totalMysticWonsUSD').innerText = `Total Mystic Wons: ${totalMysticWons * 1000}`;
                     fetchData('day');
                 });
 
